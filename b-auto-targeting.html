@@ -46,10 +46,10 @@
           continue;
         }
         // Keep the earliest enemy if two have equal health.
-          if (target && target.health > enemy.health) {
-          continue;
+          if (!target || target.health > enemy.health) {
+            target = enemy;
           }
-          target = enemy;
+          
       }
       return target;
     }
